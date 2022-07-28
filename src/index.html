@@ -1,0 +1,33 @@
+<style>
+  css-doodle {
+    --pallete: @p(rebeccapurple, yellow, teal, deeppink);
+    --main: (
+    :doodle {
+      @grid: 10x5 / 20vmin; 
+    }
+    :container {
+      perspective: 40vmin;
+    }
+    @place-cell: center;
+    @size: 100%;
+    border-radius: 50%;
+    box-shadow: @m2(0 10px 30px var(--pallete));
+    animation: illusion 15s linear infinite;
+    animation-delay: calc(-15s / @I * @i);
+    @keyframes illusion {
+      0% {
+        transform: translateZ(0) rotate(0);
+        opacity: 0;
+      }
+      50% { 
+        opacity: 1; 
+      }
+      100% {
+        transform: 
+          translateZ(40vmin) rotateZ(20deg);
+      }
+    }
+    )
+  }
+</style>
+<css-doodle use="var(--main)"></css-doodle>
